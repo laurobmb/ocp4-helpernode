@@ -362,6 +362,8 @@ nfs:
 * `nfs.server` - this is the ip address or the hostname of your nfs server
 * `nfs.path` - this is the path the nfs controller is going to mount. **This path MUST exist with the proper permissions!**
 
+### PROXY Configuration
+
 ### NTP Configuration
 
 If you would like to use your own NTP servers, you can specify them in using the follwing config.

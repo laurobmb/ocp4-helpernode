@@ -1,0 +1,37 @@
+---
+disk: sda
+
+dns:
+  domain: "rhbr-lab.com"
+  clusterid: "lagomes"
+  forwarder1: "10.36.64.2"
+
+helper:
+  name: "bastion"
+  ipaddr: "10.36.17.1"
+  networkifacename: "ens192"
+bootstrap:
+  name: "bootstrap"
+  ipaddr: "10.36.17.100"
+  macaddr: "00:50:56:81:42:c1"
+masters:
+  - name: "master01.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.17.101"
+    macaddr: "00:50:56:81:e7:3a"
+  - name: "master02.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.17.102"
+    macaddr: "00:50:56:81:65:2d"
+  - name: "master03.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.17.103"
+    macaddr: "00:50:56:81:ce:fc"
+workers:
+  - name: "infra01.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.17.104"
+    macaddr: "00:50:56:81:86:91"
+  - name: "infra02.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.17.105"
+    macaddr: "00:50:56:81:ba:ca"
+  - name: "infra03.lagomes.rhbr-lab.com"
+    ipaddr: "110.36.17.106"
+    macaddr: "00:50:56:81:16:c1"
+ 
