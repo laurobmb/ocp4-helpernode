@@ -1,0 +1,67 @@
+---
+disk: sda
+
+ocp_bios: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.0/rhcos-4.12.0-x86_64-live-rootfs.x86_64.img"
+ocp_initramfs: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.0/rhcos-4.12.0-x86_64-live-initramfs.x86_64.img"
+ocp_install_kernel: "https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.12/4.12.0/rhcos-4.12.0-x86_64-live-kernel-x86_64"
+ocp_client: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.12.8/openshift-client-linux-4.12.8.tar.gz"
+ocp_installer: "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.12.8/openshift-install-linux-4.12.8.tar.gz"
+
+
+dhcp:
+  router: "192.168.124.1"
+  bcast: "192.168.124.255"
+  netmask: "255.255.255.0"
+  poolstart: "192.168.124.10"
+  poolend: "192.168.124.30"
+  ipid: "192.168.124.0"
+  netmaskid: "255.255.255.0"
+
+proxy_env:
+  https_proxy: ""
+  http_proxy: ""
+
+dns:
+  domain: "rhbr-lab.com"
+  clusterid: "lagomes"
+  forwarder1: "10.36.64.2"
+
+helper:
+  name: "bastion"
+  ipaddr: "10.36.124.1"
+  networkifacename: "enp1s0"
+
+bootstrap:
+  name: "bootstrap"
+  ipaddr: "10.36.124.100"
+  macaddr: "00:50:56:81:42:c1"
+
+masters:
+  - name: "master01.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.124.101"
+    macaddr: "00:50:56:81:e7:3a"
+  - name: "master02.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.124.102"
+    macaddr: "00:50:56:81:65:2d"
+  - name: "master03.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.124.103"
+    macaddr: "00:50:56:81:ce:fc"
+
+workers:
+  - name: "infra01.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.124.104"
+    macaddr: "00:50:56:81:86:91"
+  - name: "infra02.lagomes.rhbr-lab.com"
+    ipaddr: "10.36.124.105"
+    macaddr: "00:50:56:81:ba:ca"
+  - name: "infra03.lagomes.rhbr-lab.com"
+    ipaddr: "110.36.124.106"
+    macaddr: "00:50:56:81:16:c1"
+ 
+chronyconfig:
+  enabled: true
+  content:
+    - server: 0.centos.pool.ntp.org
+      options: iburst
+    - server: 1.centos.pool.ntp.org
+      options: iburst
